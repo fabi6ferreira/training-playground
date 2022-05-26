@@ -1,18 +1,18 @@
 pipeline {
     agent { 
-		docker { 
-			image 'maven:3.3.3' 
-		}
-	}
+        docker { 
+            image 'maven:3.3.3' 
+        }
+    }
     stages {
         stage('tests') {
         steps {
-        	configFileProvider(
-        		[configFile(fileId: 'settings.xml',
-        			targetLocation: 'settings.xml')]) {
-        			sh 'mvn -s $MAVEN_SETTINGS -f "005 - Recording Test Results and Artifacts/02 - Java Unit Tests" clean install'
-                }
+            configFileProvider(
+                [configFile(fileId: 'settings.xml',
+                    targetLocation: 'settings.xml')]) {
+                sh 'mvn -s settings.xml -f "005 - Recording Test Results and Artifacts/02 - Java Unit Tests" clean install'
+            }
         }
-	    }
-  }
+        }
+    }
 }
