@@ -1,21 +1,21 @@
 pipeline {
     agent { 
-		docker { 
-			image 'alpine:latest' 
-		}
-	}
+      docker { 
+         image 'alpine:latest' 
+      }
+   }
     stages {
         stage('build') {
             steps {
-	    	sh "apk add curl"
+                sh "apk add curl"
                 sh "curl -o google.html www.google.com"
             }
         }
     }
-	post {
-		success {
-			archiveArtifacts artifacts: 'google.html'
-		}
-	}
+
+    post{
+        success{
+            archiveArtifacts artifacts: 'google.html'
+        }
     }
 }
