@@ -4,7 +4,7 @@ pipeline {
         stage('mvn') {
             agent {
                 dockerfile {
-                    filename '04 - Dockerfile - Install Software Dockerfile Maven'
+                    filename '04 - Jenkinsfile - Dockerfile Agent'
                     dir '003 - Defining Execution Environments'
                 }
             }
