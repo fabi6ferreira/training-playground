@@ -1,14 +1,15 @@
 pipeline {
     agent { 
 		docker { 
-			image 'alpine:latest' 
+			image 'maven:latest' 
 		}
 	}
     stages {
         stage('tests') {
-            steps {
-                sh ""
-            }
+	configFileProvider(
+		[configFile(fileId: 'settings.xml',
+			variable: 'MAVEN_SETTINGS')]) {
+			sh 'mvn -s $MAVEN_SETTINGS clean install'
         }
     }
 }
