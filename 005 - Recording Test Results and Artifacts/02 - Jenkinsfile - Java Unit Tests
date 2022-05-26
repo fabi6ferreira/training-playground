@@ -9,7 +9,7 @@ pipeline {
         steps {
         	configFileProvider(
         		[configFile(fileId: 'settings.xml',
-        			variable: 'MAVEN_SETTINGS')]) {
+        			targetLocation: 'settings.xml')]) {
         			sh 'mvn -s $MAVEN_SETTINGS -f "005 - Recording Test Results and Artifacts/02 - Java Unit Tests" clean install'
                 }
         }
