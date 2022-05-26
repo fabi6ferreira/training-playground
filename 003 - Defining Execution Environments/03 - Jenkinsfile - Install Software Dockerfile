@@ -1,9 +1,11 @@
 pipeline {
     agent { 
+     	dockerfile {
 	    	filename '03 - Dockerfile - Install Software Dockerfile'
 		dir '003 - Defining Execution Environments/03 - Dockerfile - Install Software Dockerfile'
 		label 'my-defined-label'
 	}
+    }
     stages {
         stage('build') {
             steps {
