@@ -10,9 +10,11 @@ pipeline {
 			NUMBER_OF_ISSUES = "test_notification"
 		    }
 		    steps {
-			    env.NUMBER_OF_ISSUES = "10"
-				echo '$NUMBER_OF_ISSUES'
-			    }
+		    	script {
+				    env.NUMBER_OF_ISSUES = "10"
+					echo '$NUMBER_OF_ISSUES'
+				}
+			}
 	    }
 	}
 }
