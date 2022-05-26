@@ -10,10 +10,10 @@ pipeline {
                 script {
                 	def buildConfigs = readJSON text: '[{
 				name: "Java",
-				command: "echo 'Java command!'"
+				command: "echo java command"
 			}, {
 				name: "Node",
-				command:" echo 'Node command!'"
+				command:" echo node command"
 			}]'
                 	buildConfigs.each{ buildConfig ->
                 		sh "echo '$buildConfig.name' && $buildConfig.command"
