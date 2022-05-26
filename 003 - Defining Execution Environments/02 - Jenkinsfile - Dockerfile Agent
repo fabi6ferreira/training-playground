@@ -1,5 +1,10 @@
 pipeline {
     agent { 
+    	    // Equivalent to "docker build -f Dockerfile.build --build-arg version=1.0.2 ./build/
+	    dockerfile {
+		filename '02 - Dockerfile - Dockerfile Agent'
+		dir '003 - Defining Execution Environments'
+	    }
 	}
     stages {
         stage('build') {
