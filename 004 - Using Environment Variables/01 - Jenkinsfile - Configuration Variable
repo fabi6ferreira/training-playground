@@ -7,10 +7,10 @@ pipeline {
     stages {
         stage('build') {
 		environment { 
-			NUMBER_OF_ISSUES = "10" 
+			NOTIFICATION_EMAIL="TEST_NOTIFICATION"
 		}
             steps {
-                echo "$NOTIFICATION_EMAIL" && echo "$NUMBER_OF_ISSUES"
+                echo "$NOTIFICATION_EMAIL"
             }
         }
     }
