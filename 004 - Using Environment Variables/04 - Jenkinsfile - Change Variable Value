@@ -5,5 +5,12 @@ pipeline {
 		}
 	}
     stages {
-    }
+	    environment {
+			NUMBER_OF_ISSUES = "test_notification"
+		    }
+			    stage ('teste') {
+				NUMBER_OF_ISSUES = "10"
+				sh "echo '$NUMBER_OF_ISSUES'"
+			    }
+	    }
 }
