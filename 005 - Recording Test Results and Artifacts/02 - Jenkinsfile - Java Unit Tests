@@ -10,7 +10,7 @@ pipeline {
         	configFileProvider(
         		[configFile(fileId: 'settings.xml',
         			variable: 'MAVEN_SETTINGS')]) {
-        			sh 'mvn -s $MAVEN_SETTINGS -f 005 - Recording Test Results and Artifacts/02 - Java Unit Tests/pom.xml clean install'
+        			sh 'mvn -s $MAVEN_SETTINGS -f "005 - Recording Test Results and Artifacts/02 - Java Unit Tests" clean install'
                 }
         }
 	    }
