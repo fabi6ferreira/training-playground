@@ -10,8 +10,8 @@ pipeline {
 			NUMBER_OF_ISSUES = "test_notification"
 		    }
 		    steps {
-			    env.NUMBER_OF_ISSUES = 10
-				sh "echo '$NUMBER_OF_ISSUES'"
+			    env.NUMBER_OF_ISSUES = "10"
+				echo '$NUMBER_OF_ISSUES'
 			    }
 	    }
 	}
