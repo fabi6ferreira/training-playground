@@ -9,7 +9,7 @@ pipeline {
         stage('tests') {
             steps {
                 sh "mvn -f '005 - Recording Test Results and Artifacts/03 - Sonar Integration' sonar:sonar -Dsonar.projectKey='test-moises' \
-		-Dsonar.projectName='test-moises' -Dsonar.host.url=sonarqube:8081"
+		-Dsonar.projectName='test-moises' -Dsonar.host.url=http://sonarqube:8081"
             }
         }
     }
