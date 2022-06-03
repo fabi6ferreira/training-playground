@@ -9,7 +9,7 @@ pipeline {
         stage('build') {
             steps {
                 configFileProvider(
-                [configFile(fileId: 'mvn-settings',
+                [configFile(fileId: 'settings.xml',
                     targetLocation: 'settings.xml')]) {
                 sh 'mvn -s settings.xml -f "005 - Recording Test Results and Artifacts/04 - Publish in Nexus" clean install'
             }
