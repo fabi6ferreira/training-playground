@@ -7,7 +7,9 @@ pipeline {
     stages {
         stage('tests') {
             steps {
-                sh 'mvn -f "005 - Recording Test Results and Artifacts/03 - Sonar Integration" sonar:sonar -Dsonar.host.url=http://3.124.164.63:8081'
+                sh '''mvn -Dsonar.projectKey='test' \
+		-Dsonar.projectName='test' \ 
+		-f "005 - Recording Test Results and Artifacts/03 - Sonar Integration" sonar:sonar -Dsonar.host.url=http://3.124.164.63:8081'''
             }
         }
     }
