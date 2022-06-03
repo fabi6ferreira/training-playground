@@ -2,7 +2,7 @@ pipeline {
     agent { 
 		docker { 
 			image 'maven:3.3.3' 
-			network 'training-playground'
+        		args '--network training-playground'
 		}
 	}
     stages {
